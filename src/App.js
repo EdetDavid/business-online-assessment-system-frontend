@@ -21,13 +21,16 @@ import AdminDashboardPage from "./pages/AdminDashboardPage";
 import AdminProfilePage from "./pages/AdminProfilePage";
 import { fetchCsrfToken } from "./services/api";
 
-
-
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     fetchCsrfToken();
+  }, []);
+
+  useEffect(() => {
+    // Add an emoji icon to the document title
+    document.title = '📊 Business Assessment';
   }, []);
 
   // Generate theme based on dark/light mode
